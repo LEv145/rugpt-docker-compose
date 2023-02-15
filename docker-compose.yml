@@ -1,0 +1,13 @@
+services:
+  rugpt:
+    image: lev145/rugpt
+    build: .
+    volumes:
+      - ./store/:/mnt/store
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
