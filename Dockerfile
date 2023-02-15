@@ -19,11 +19,11 @@ RUN pip install \
 "regex==2020.1.8" \
 "huggingface_hub" \
 "timm==0.3.2" \
-"triton"
+"triton==0.4.2"
 RUN pip install transformers
-RUN DS_BUILD_CPU_ADAM=1 DS_BUILD_SPARSE_ATTN=1 pip install "deepspeed==0.5.10"
+#RUN DS_BUILD_CPU_ADAM=1 DS_BUILD_SPARSE_ATTN=1 pip install "deepspeed==0.5.10"
 
 
 WORKDIR /opt/
-RUN git clone https://github.com/sberbank-ai/ru-gpts
+RUN git clone https://github.com/sberbank-ai/ru-gpts rugpts
 WORKDIR /opt/rugpts

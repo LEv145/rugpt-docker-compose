@@ -4,6 +4,8 @@ services:
     build: .
     volumes:
       - ./store/:/mnt/store
+    stdin_open: true
+    tty: true
     deploy:
       resources:
         reservations:
