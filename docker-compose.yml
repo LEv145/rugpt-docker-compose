@@ -12,22 +12,19 @@ x-base_service: &base_service
             capabilities: [gpu]
 
 services:
-  rugpt-xl:
+  rugpt3-xl:
     <<: *base_service
     image: lev145/rugpt3-xl
     build: ./services/ruGPT3XL
-    profiles: ["rugpt-xl"]
 
-  rugpt:
+  rugpt3:
     <<: *base_service
     image: lev145/rugpt3
     build: ./services/ruGPT3
-    profiles: ["rugpt"]
 
   download:
     image: lev145/rugpt3-download
     build: ./services/download
-    profiles: ["download"]
 
     volumes:
       - *store_volume
