@@ -24,5 +24,5 @@ gpt.generate(
     max_length=50,
     no_repeat_ngram_size=3,
     repetition_penalty=2.0,
-    fp16=False
+    num_beams=5,
 )

@@ -20,8 +20,11 @@ RUN pip install "sentencepiece>=0.1.8"
 RUN pip install "tensorflow>=1.12.0"
 RUN pip install "boto3==1.11.11"
 RUN pip install "regex==2020.1.8"
-#"timm==0.3.2" \
+RUN pip install "triton==1.0.0"
 RUN DS_BUILD_CPU_ADAM=1 DS_BUILD_SPARSE_ATTN=1 pip install deepspeed
+RUN pip install transformers==4.26.1
+RUN pip install "timm==0.3.2"
+RUN pip install huggingface_hub
 
 
 WORKDIR /opt/rugpts
