@@ -1,15 +1,23 @@
+x-base_service: &base_service
+  volumes:
+    - ./store/:/mnt/store
+  stdin_open: true
+  tty: true
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
+
 services:
+  rugpt-xl:
+    image: lev145/rugpt3xl
+    build: ./services/ruGPT3XL
+    <<: *base_service
+
   rugpt:
-    image: lev145/rugpt
-    build: .
-    volumes:
-      - ./store/:/mnt/store
-    stdin_open: true
-    tty: true
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    image: lev145/rugpt3
+    build: ./services/ruGPT3
+    <<: *base_service
