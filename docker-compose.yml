@@ -1,6 +1,6 @@
 x-base_service: &base_service
   volumes:
-    - ./store/:/mnt/store
+    - &store_volume ./store/:/mnt/store
   stdin_open: true
   tty: true
   deploy:
@@ -30,4 +30,4 @@ services:
     profiles: ["download"]
 
     volumes:
-    - ./store/:/mnt/store
+      - *store_volume
