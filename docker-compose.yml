@@ -13,11 +13,21 @@ x-base_service: &base_service
 
 services:
   rugpt-xl:
-    image: lev145/rugpt3xl
-    build: ./services/ruGPT3XL
     <<: *base_service
+    image: lev145/rugpt3-xl
+    build: ./services/ruGPT3XL
+    profiles: ["rugpt-xl"]
 
   rugpt:
+    <<: *base_service
     image: lev145/rugpt3
     build: ./services/ruGPT3
-    <<: *base_service
+    profiles: ["rugpt"]
+
+  download:
+    image: lev145/rugpt3-download
+    build: ./services/download
+    profiles: ["download"]
+
+    volumes:
+    - ./store/:/mnt/store

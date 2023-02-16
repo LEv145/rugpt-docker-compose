@@ -2,7 +2,7 @@ FROM nvcr.io/nvidia/pytorch:22.02-py3
 
 
 WORKDIR /opt/
-RUN git clone https://github.com/sberbank-ai/ru-gpts rugpts
+RUN git clone https://github.com/sberbank-ai/ru-gpts
 
 
 RUN pip install -U pip
@@ -27,4 +27,4 @@ RUN pip install "timm==0.3.2"
 RUN pip install huggingface_hub
 
 
-WORKDIR /opt/rugpts
+WORKDIR /opt/ru-gpts
