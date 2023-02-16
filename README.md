@@ -4,7 +4,7 @@
 
 ```sh
 # Download models to store
-docker compose up gfdownload
+docker compose up download
 # Run RuGPT
 docker compose run [model]
 # Where [model] is one of: rugpt3 | rugpt3-xl (experemental)
