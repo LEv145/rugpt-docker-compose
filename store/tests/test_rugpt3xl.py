@@ -17,10 +17,16 @@ def main():
         seq_len=512,
     )
     result = gpt.generate(
-        "Кто был президентом США в 2020? ",
-        max_length=50,
-        no_repeat_ngram_size=3,
-        repetition_penalty=2.0,
+        (
+            "<s>Тема: «Создает человека природа, но развивает "
+            "и образует его общество». (В.Т. Белинский)\nСочинение: "
+        ),
+        max_length=512,
+        repetition_penalty=5.0,
+        do_sample=True,
+        top_k=5,
+        top_p=0.95,
+        temperature=1,
     )
     print(result)
 
