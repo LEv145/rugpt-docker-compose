@@ -1,6 +1,10 @@
 FROM nvcr.io/nvidia/pytorch:22.02-py3
 
 
+ARG PIP_DISABLE_PIP_VERSION_CHECK=1
+ARG PIP_NO_CACHE_DIR=1
+
+
 WORKDIR /opt/
 RUN git clone https://github.com/sberbank-ai/ru-gpts
 
