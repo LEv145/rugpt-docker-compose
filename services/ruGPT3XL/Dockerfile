@@ -16,7 +16,7 @@ WORKDIR /tmp/unique_for_apex
 RUN git clone https://github.com/NVIDIA/apex
 WORKDIR /tmp/unique_for_apex/apex
 RUN git reset --hard 0c8400aa04f4279b1384ae0633e73d6daf9fead7
-RUN pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" .
+RUN pip install -v --global-option="--cpp_ext" --global-option="--cuda_ext" .
 RUN rm -Rf /tmp/unique_for_apex/apex
 
 RUN pip install "nltk>=3.4"
